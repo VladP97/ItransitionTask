@@ -1,0 +1,4 @@
+:schedule:
+  update_info:
+    cron: '0 * * * * *'
+    class: UpdateInfoJob

@@ -1,0 +1,10 @@
+<div class="search-block">
+  <div class="input-group search-group">
+    <%= form_for products_path, method: :post, html: {class: "search-form"} do %>
+      <%= text_field :product, :query, class: "form-control" %>
+      <span class="input-group-btn">
+        <%= submit_tag "Search", class: "btn btn-secondary" %>
+      </span>
+    <% end %>
+  </div>
+</div>
