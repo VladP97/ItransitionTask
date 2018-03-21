@@ -9,6 +9,16 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <div class="navbar-collapse-right" id="navbarSupportedContent">
+      <%= form_for products_path, method: :get, html: {class: "form-inline my-2 my-lg-0"} do %>
+        <%= text_field :search, :search_query, {class: "form-control mr-sm-2", placeholder: "Search"} %>
+        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 </html>

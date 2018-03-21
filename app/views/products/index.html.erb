@@ -1,10 +1,23 @@
-<div class="search-block">
-  <div class="input-group search-group">
-    <%= form_for products_path, method: :post, html: {class: "search-form"} do %>
-      <%= text_field :product, :query, class: "form-control" %>
-      <span class="input-group-btn">
+<div class="row">
+  <div class="col-md-8">
+    <div class="input-group search-group">
+      <%= form_for products_path, method: :post, html: {class: "search-form"} do %>
+        <%= text_field :product, :query, class: "form-control" %>
+        <span class="input-group-btn">
         <%= submit_tag "Search", class: "btn btn-secondary" %>
       </span>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <% @urls.each do |url| %>
+      <%= link_to product_path url.id do %>
+        <h2 class="products-block"><%= url.products.first.name %></h2>
+        <img src="<%= url.image %>" alt="">
+      <% end %>
+      <a href="<%= url.url %>"><%= url.url %></a>
+      <hr>
     <% end %>
+    <%= paginate @urls %>
   </div>
 </div>

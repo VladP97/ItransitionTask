@@ -1,3 +1,19 @@
+<%= javascript_include_tag "products_show" %>
+
 <h1 class="product-heading"><%= @products.first.name %></h1>
 
-<div id="chart-container" class="chart-block"><%= @chart.render() %></div>
+<%= render partial: "chart", locals: {chart: @chart} %>
+
+<div style="text-align: center">
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary active">
+      <input class="radio" data-period="1" type="radio" name="options" id="option1" autocomplete="off" checked> Statistics by 1 day
+    </label>
+    <label class="btn btn-primary">
+      <input class="radio" data-period="7" type="radio" name="options" id="option2" autocomplete="off"> Statistics by 7 days
+    </label>
+    <label class="btn btn-primary">
+      <input class="radio" data-period="30" type="radio" name="options" id="option3" autocomplete="off"> Statistics by 30 days
+    </label>
+  </div>
+</div>
