@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320211614) do
+ActiveRecord::Schema.define(version: 20180322203306) do
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
-    t.string "name"
     t.decimal "min_price", precision: 6, scale: 2
     t.decimal "max_price", precision: 6, scale: 2
     t.datetime "created_at", null: false
@@ -22,11 +21,12 @@ ActiveRecord::Schema.define(version: 20180320211614) do
     t.index ["url_id"], name: "index_products_on_url_id"
   end
 
-  create_table "urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "name"
   end
 
   add_foreign_key "products", "urls"

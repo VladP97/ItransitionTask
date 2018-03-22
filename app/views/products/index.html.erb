@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <div class="input-group search-group">
       <%= form_for products_path, method: :post, html: {class: "search-form"} do %>
         <%= text_field :product, :query, class: "form-control" %>
@@ -9,12 +9,13 @@
       <% end %>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6" style="text-align: center">
     <% @urls.each do |url| %>
       <%= link_to product_path url.id do %>
-        <h2 class="products-block"><%= url.products.first.name %></h2>
+        <h2 class="products-block"><%= url.name %></h2>
         <img src="<%= url.image %>" alt="">
       <% end %>
+      <br>
       <a href="<%= url.url %>"><%= url.url %></a>
       <hr>
     <% end %>

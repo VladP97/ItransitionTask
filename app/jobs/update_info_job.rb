@@ -37,7 +37,6 @@ class UpdateInfoJob
           last_product_state.created_at.to_date < Date.today
       Product.create(min_price: current_product_state["min_price"],
                      max_price: current_product_state["max_price"],
-                     name: current_product_state["name"],
                      url_id: last_product_state["url_id"])
     end
   end

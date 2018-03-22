@@ -48,6 +48,9 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.3)
     byebug (10.0.0)
     capybara (2.18.0)
@@ -57,6 +60,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
+    chartkick (2.3.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
@@ -75,7 +79,6 @@ GEM
       tzinfo
     execjs (2.7.0)
     ffi (1.9.23)
-    fusioncharts-rails (0.0.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -220,11 +223,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap
+  bootstrap-kaminari-views
   byebug
   capybara (~> 2.13)
+  chartkick
   coffee-rails (~> 4.2)
   curb
-  fusioncharts-rails
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

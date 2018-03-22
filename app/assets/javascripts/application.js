@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
-//= require fusioncharts/js/fusioncharts
-//= require fusioncharts/js/fusioncharts.charts
-//= require fusioncharts/js/themes/fusioncharts.theme.fint
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

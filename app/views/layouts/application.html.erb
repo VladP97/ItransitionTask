@@ -10,7 +10,7 @@
 
   <body>
   <nav class="navbar navbar-light bg-faded">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <%= link_to "Observer", root_path, class: "navbar-brand" %>
 
     <div class="navbar-collapse-right" id="navbarSupportedContent">
       <%= form_for products_path, method: :get, html: {class: "form-inline my-2 my-lg-0"} do %>

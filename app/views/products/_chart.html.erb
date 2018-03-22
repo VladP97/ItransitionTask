@@ -1,1 +1,4 @@
-<div id="chart-container" class="chart-block"><%= chart.render() %></div>
+<div id="chart-container" class="chart-block">
+  <%= area_chart [{name: "Min", data: products.pluck(:created_at, :min_price)},
+                  {name: "Max", data: products.pluck(:created_at, :max_price)}], {min: min} %>
+</div>

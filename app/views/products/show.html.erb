@@ -1,8 +1,8 @@
 <%= javascript_include_tag "products_show" %>
 
-<h1 class="product-heading"><%= @products.first.name %></h1>
+<h1 class="product-heading"></h1>
 
-<%= render partial: "chart", locals: {chart: @chart} %>
+<%= render partial: "chart", locals: {products: @products, min: @min} %>
 
 <div style="text-align: center">
   <div class="btn-group" data-toggle="buttons">
