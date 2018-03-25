@@ -1,8 +1,9 @@
 <%= javascript_include_tag "products_show" %>
+<%= action_cable_meta_tag %>
 
 <h1 class="product-heading"></h1>
 
-<%= render partial: "chart", locals: {products: @products, min: @min} %>
+<%= render partial: "chart", locals: {products: @products, min: @min, period: 1} %>
 
 <div style="text-align: center">
   <div class="btn-group" data-toggle="buttons">

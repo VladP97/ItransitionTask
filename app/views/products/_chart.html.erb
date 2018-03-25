@@ -1,4 +1,4 @@
-<div id="chart-container" class="chart-block">
+<div id="chart-container" data-period="<%= period %>" class="chart-block" style="height: 300px">
   <%= area_chart [{name: "Min", data: products.pluck(:created_at, :min_price)},
                   {name: "Max", data: products.pluck(:created_at, :max_price)}], {min: min} %>
 </div>

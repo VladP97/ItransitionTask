@@ -30,14 +30,18 @@ class UpdateInfoJob
   end
 
   def update_if_new(last_product_state, current_product_state)
-    puts current_product_state["min_price"]
-    puts last_product_state["min_price"]
+    p last_product_state["url_id"]
+    # head :ok
     if last_product_state["min_price"] != current_product_state["min_price"] ||
         last_product_state.max_price != current_product_state["max_price"] ||
-          last_product_state.created_at.to_date < Date.today
+          last_product_state.created_at.to_datetime < DateTime.now - 1.hour
       Product.create(min_price: current_product_state["min_price"],
                      max_price: current_product_state["max_price"],
                      url_id: last_product_state["url_id"])
+      ActionCable.server.broadcast 'products',
+                                   id: last_product_state["url_id"],
+                                   max_price: Product.where(url_id: last_product_state["url_id"]).pluck(:created_at, :max_price),
+                                   min_price: Product.where(url_id: last_product_state["url_id"]).pluck(:created_at, :min_price)
     end
   end
 end
